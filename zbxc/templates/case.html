@@ -1,0 +1,112 @@
+﻿{% extends 'base.html' %}
+
+
+{% block css %}
+    <style>
+        #img {
+            margin-top: -100px
+        }
+
+        #case {
+            margin-top: 30px;
+        }
+
+        .item:hover {
+            border: 2px solid chartreuse
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="content-body page">
+    <div class="container">
+        <img src="/static/case/case.jpg" id="img">
+
+        <div id="case">
+            <div class="row">
+
+                {% for row in data %}
+                <div class="col-sm-6 col-md-4 item">
+                    <div class="thumbnail">
+                        <img src="" alt="...">
+                        <div class="caption">
+                            <h3>{{ row.title }}</h3>
+                            <p></p>
+                            <p>
+                                <button type="button" class="btn btn-success xmqk">项目情况</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-sm-6 col-md-4 item">
+                    <div class="thumbnail">
+                        <img src="/static/case/mjq.png" alt="...">
+                        <div class="caption">
+                            <h3>马驹桥物流B东地块公租房产业化项目全过程造价咨询</h3>
+                            <p>通州区马驹桥物流B东公租房产业化施工总承包项目是北京市第一个大面积使用预制构件的项目。</p>
+                            <p>
+                                <button type="button" class="btn btn-success xmqk">项目情况</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 item">
+                    <div class="thumbnail">
+                        <img src="/static/case/xqds.jpg" alt="...">
+                        <div class="caption">
+                            <h3>西气东输二线广州-南宁支干线工程竣工结算审计</h3>
+                            <p></p>
+                            <p>
+                                <button type="button" class="btn btn-success xmqk" nid="4">项目情况</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">西气东输二线广州-南宁支干线工程竣工结算审计</h4>
+          </div>
+          <div class="modal-body">
+            <p> 西气东输二线工程是中国第一条引进境外天然气资源的大型管道工程，由一条干线八条支线组成，管线全长8653公里，
+                起于新疆霍尔果斯首站，横穿中国15个省区市及特别行政区，止于香港。
+      西气东输二线东段由一干六支组成，其中广州-南宁支干线全长632公里，管径1016毫米，设计压力10兆帕，输气规模100亿立方米/年，
+                概算投资599,478万元。支干线起自广州分输站，止于南宁末站；工程由长沙华星建设监理公司监理，管道局总承包，四川
+                派普无损检测，石油与天然气工程质量监督总站进行质量监督。项目开竣工日期为2008年2月22日， 竣工日期为2011年6月30日。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary">打印</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+{% endblock %}
+{% block js %}
+    <script>
+        $('.xmqk').click(function () {
+            var nid = $(this).attr('nid');
+            $.ajax(
+
+            );
+            $('#myModal').modal('show')
+
+        })
+
+    </script>
+
+
+{% endblock %}

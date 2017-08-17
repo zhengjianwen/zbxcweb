@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.css">
+    <link rel="stylesheet" href="/static/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/static/fonts/fi/flaticon.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/indent.css">
+    <link rel="stylesheet" href="/static/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="/static/rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="/static/rs-plugin/css/navigation.css">
+      {% block css %}{% endblock %}
+    <title>{% block title %}中博信工程造价咨询（北京）有限公司--官网{% endblock %}{{ title }}</title>
+  </head>
+
+<body>
+    <header>
+      <!-- site top panel-->
+      <div class="site-top-panel">
+        <div class="container p-relative">
+          <div class="row">
+            <div class="col-sm-6">
+              <!-- lang select wrapper-->
+              <div class="top-left-wrap">
+                <div class="lang-wrap">
+                  <div>
+                    <ul>
+                      <li><a href="#" class="lang-sel icl-en">中国<i class="flaticon-internet"></i></a>
+                        <ul>
+                          <li class="icl-fr"><a href="#">English</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div><span>|</span>
+                  <!-- 分享功能-->
+                <div class="social-wrap">
+                    <a href="" title="Google +" class="cws_social_link">
+                        <i class="share-icon fa fa-google-plus"></i>
+                    </a>
+                    <a href="" title="Twitter" class="cws_social_link">
+                        <i class="share-icon fa fa-twitter"></i>
+                    </a>
+                    <a href="" title="Facebook" class="cws_social_link">
+                        <i class="share-icon fa fa-facebook"></i>
+                    </a>
+                    <a href="" title="Dribbble" class="cws_social_link">
+                        <i class="share-icon fa fa-dribbble"></i>
+                    </a>
+                </div>
+              </div>
+              <!-- ! lang select wrapper-->
+            </div>
+            <div class="col-sm-6 text-right">
+              <div class="top-right-wrap">
+                <div class="top-login">
+                    <i class="flaticon-people-2"></i>
+                    <a href="http://oa.zbxc.cn">办公系统</a>
+                </div>
+                  <span>|</span>
+                <div class="top-shop">
+                    <i class="flaticon-commerce"></i>
+                    <a href="/zhaopin.html">招聘中心</a>
+                </div><span>|</span>
+                <div class="top-search">
+                    <i class="flaticon-interface"></i>
+                    <a href="http://oa.zbxc.cn">在线解答</a>
+                </div>
+              </div>
+            </div>
+            <!--
+            <div class="search_menu_cont">
+              <form role="search" method="get" class="form">
+                <div class="search-wrap">
+                  <input type="text" placeholder="Search . . ." class="form-control search-field">
+                </div>
+              </form>
+              <div class="search_back_button"><i class="fa fa-close"></i></div>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+      <!-- ! site top panel-->
+      <!-- Navigation panel-->
+      <nav class="main-nav js-stick">
+        <div class="full-wrapper relative clearfix container">
+          <!-- Logo -->
+          <div class="nav-logo-wrap local-scroll">
+              <a href="index.html" class="logo">
+              <img src="/static/img/logo.png"  alt>
+              <img src="/static/img/logo.png" alt class="sticky-logo"></a>
+          </div>
+          <!-- 主菜单-->
+          <div class="inner-nav desktop-nav switch-menu">
+            <ul class="clearlist">
+              <!-- Item With Sub-->
+				<li><a href="/index.html">主页</a></li>
+				<li><a href="/about.html">关于我们</a></li>
+				<li><a href="/business.html">业务范围</a></li>
+				<li><a href="/case.html">客户案例</a></li>
+				<li><a href="/news.html">新闻中心</a></li>
+				<li><a href="/index.html">合作单位</a></li>
+				<li><a href="/contact.html">联系我们</a></li>
+            </ul>
+            <div class="menu-contacts">
+              <!--
+              <div class="menu-contacts-item"><i class="flaticon-technology-2 cws-icon"></i>
+                <p class="mb-0">(010) 8586-3223</p>
+                <p class="mb-0">Fax: (010) 8586 7012</p>
+              </div>
+                -->
+              <div class="menu-contacts-item"><i class="flaticon-placeholder cws-icon"></i>
+                <p class="mb-0">北京市朝阳区八里庄西里</p>
+                <p class="mb-0">住邦2000一号楼东20层</p>
+              </div>
+
+              <div class="menu-contacts-item"><i class="flaticon-time cws-icon"></i>
+                <p class="mb-0">(010) 8586-3223</p>
+                <p class="mb-0">Fax: (010) 8586 7012</p>
+              </div>
+
+            </div><a href="#" class="menu-bar"><span class="ham"></span></a>
+          </div>
+          <!-- End Main Menu-->
+        </div>
+      </nav>
+      <!-- End Navigation panel-->
+    </header>
+    {% block body %}{% endblock %}
+    {% block foot %}
+
+    <footer style="background-image: url('/static/pic/footer/footer-bg.jpg')" class="footer footer-fixed">
+      <div class="container">
+        <div class="row cws-multi-col">
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6 mb-md-50">
+            <div class="widget-footer text">
+              <h3>中博信</h3>
+              <div class="cws_divider with-plus short-2 mb-5 mt-10"></div>
+              <p>一个朝气蓬勃的团队，一支有性格的团队！</p>
+              <div class="footer-cws-social mt-25">
+                  <a href="#" class="cws-social flaticon-social-4"></a>
+                  <a href="#" class="cws-social flaticon-social"></a>
+                  <a href="#" class="cws-social flaticon-social-3"></a>
+                  <a href="#" class="cws-social flaticon-social-1"></a>.
+                  <a href="#" class="cws-social flaticon-social-network"></a></div>
+            </div>
+          </div>
+          <!-- end widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6 mb-md-50">
+            <div class="widget-footer">
+              <h3>快速链接</h3>
+              <div class="cws_divider with-plus short-2 mb-5 mt-10"></div>
+              <ul>
+                <li><a href="#showme">关于我们</a> <a href="#news">新闻中心</a></li>
+                <li><a href="#servers">服务介绍</a> <a href="#tuandui">团队介绍</a></li>
+                <li><a href="#projects">项目案例</a> <a href="#hezuo">合作评价</a></li>
+                <li><a href="#youshi">我们优势</a> <a href="http://oa.zbxc.cn">办公系统</a></li>
+                <li><a href="http://mail.zbxc.cn">企业邮箱</a> <a href="#">学习系统</a>		</li>
+              </ul>
+            </div>
+          </div>
+          <!-- end widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6 mb-sm-50">
+            <div class="widget-footer">
+              <h3>最新新闻</h3>
+              <div class="cws_divider with-plus short-2 mb-5 mt-10"></div>
+              <div class="recent-item clearfix"><a href="#"><img src="/static/pic/footer/1.jpg" data-at2x="pic/footer/1@2x.jpg" alt></a>
+                <h4 class="recent-title"><a href="#">中博信开展2017年度内部执业质量和内部管理情况检查</a></h4>
+                <p>2017-06-06 / 3 分钟前</p>
+              </div>
+              <div class="recent-item clearfix"><a href="#"><img src="/static/pic/footer/2.jpg" data-at2x="pic/footer/2@2x.jpg" alt></a>
+                <h4 class="recent-title"><a href="#">中博信开展2017年度内部执业质量和内部管理情况检查</a></h4>
+                <p>2017-06-06 / 3 分钟前</p>
+              </div>
+            </div>
+          </div>
+          <!-- end widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6">
+            <div class="widget-footer">
+              <h3>最新资讯</h3>
+              <div class="cws_divider with-plus short-2 mb-5 mt-10"></div>
+              <address>
+                <p>如果您订阅我们的的最新资讯，请留下您的邮箱！ </p>
+              </address>
+              <div class="footer-form-wrap">
+                <form method="get" action="#" class="newsletter contact-form">
+                  <div class="newsletter-footer-wrap">
+                    <input type="EMAIL" placeholder="请输入邮箱" value="" name="email" class="newsletter-field">
+                    <input type="submit" value="订阅" class="newsletter-submit cws-button alt"/>
+                  </div>
+                </form>
+                <div id="footer-form" role="alert" class="alert alert-danger alt alert-dismissible fade in">
+                  <button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true">×</span></button><i class="alert-icon border fa fa-exclamation-triangle"></i><strong>Error Message!</strong><br>
+                  <div class="message"></div>
+                </div>
+                <div class="email_server_responce"></div>
+              </div>
+            </div>
+          </div>
+          <!-- end widget footer-->
+        </div>
+      </div>
+      <!-- copyright-->
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Copyright &copy; 2017.Company Hairui All rights reserved.
+                  <a target="_blank" href="http://www.hairuinet.com">海瑞网络</a></p>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="/index.html" class="footer-nav">公司简介</a>
+                <a href="/business.html" class="footer-nav">业务介绍</a>
+                <a href="/case.html" class="footer-nav">客户案例</a>
+                <a href="/news.html" class="footer-nav">新闻中心</a>
+                <a href="/business.html" class="footer-nav">合作单位</a>
+                <a href="/contact.html" class="footer-nav">联系方式</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- end copyright-->
+      <!-- scroll top-->
+    </footer>
+    <div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+    <!-- ! footer-->
+    <!-- login popup-->
+    <div class="login-popup">
+      <div class="login-popup-wrap">
+        <div class="title-wrap">
+          <h2>Login</h2>
+            <i class="close-button flaticon-cross"></i>
+        </div>
+        <div class="login-content">
+          <form class="form">
+            <input type="text" name="email" value="" size="40" placeholder="Enter Your Email ..." aria-required="true" class="form-row form-row-first">
+            <input type="text" name="password" value="" size="40" placeholder="Enter Your Password ..." aria-required="true" class="form-row form-row-last">
+          </form>
+          <div class="remember">
+            <div class="checkbox">
+              <input id="checkbox3" type="checkbox" value="None" name="check">
+              <label for="checkbox3">Remember Me</label>
+            </div><a href="#">Forgot Password ?</a>
+          </div><a href="#" class="cws-button gray alt full-width mt-20">Login now</a>
+        </div>
+        <div class="login-bot">
+          <p>No account yet? <a href="#">Register now</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- ! login popup-->
+    <!-- news popup-->
+    <div class="news-popup">
+      <div class="news-popup-wrap"> <i class="close-button flaticon-cross"></i>
+        <div class="row">
+          <div class="col-sm-6"><img src="/static/pic/news-popup.jpg" data-at2x="pic/news-popup@2x.jpg" alt></div>
+          <div class="col-sm-6">
+            <div class="news-content">
+              <div class="news-title">
+                <h2>Newsletter</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.</p>
+              </div>
+              <div class="contact-form-wrap">
+                <form method="get" action="#" class="newsletter contact-form">
+                  <div class="newsletter-wrap mb-0">
+                    <input type="text" placeholder="Enter Your Email ..." value="" name="email" class="newsletter-field mb-0">
+                    <button type="submit" class="newsletter-submit cws-button alt">Submit</button>
+                  </div>
+                </form>
+                <div id="news-form" role="alert" class="alert alert-danger alt alert-dismissible fade in">
+                  <button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true">×</span></button><i class="alert-icon border fa fa-exclamation-triangle"></i>
+                  <div class="message"></div>
+                </div>
+                <div class="email_server_responce"></div>
+              </div>
+              <div class="checkbox-wrap">
+                <div class="checkbox">
+                  <input id="checkbox4" type="checkbox" value="None" name="check">
+                  <label for="checkbox4">不要再显示此消息！</label>
+                </div>
+              </div>
+              <div class="social-wrap"><a href="#" class="cws-social flaticon-social-4"></a>
+                  <a href="#" class="cws-social flaticon-social"></a>
+                  <a href="#" class="cws-social flaticon-social-3"></a>
+                  <a href="#" class="cws-social flaticon-social-1"></a>
+                  <a href="#" class="cws-social flaticon-social-network"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ! news popup-->
+
+
+    {% endblock %}
+
+    {% block alljs %}
+     <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="/static/js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="/static/js/cws_parallax.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="/static/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/static/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
+    <script type="text/javascript" src="/static/js/bg-video/cws_self_vimeo_bg.js"></script>
+    <script type="text/javascript" src="/static/js/bg-video/jquery.vimeo.api.min.js"></script>
+    <script type="text/javascript" src="/static/js/bg-video/cws_YT_bg.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="/static/js/retina.min.js"></script>
+    {% block js %}{% endblock %}
+    {% endblock %}
+  </body>
+</html>

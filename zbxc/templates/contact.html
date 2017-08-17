@@ -1,0 +1,178 @@
+﻿{% extends 'base.html' %}
+
+{% block css %}
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=Mh2iymFIrv2ZixGI6gIyjhhGeceoe19C&v=1.1&services=true"></script>
+{% endblock %}
+{% block body %}
+    <div class="content-body page">
+      <!-- content-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="title-section mb-0 mt-0 text-center">中博信工程造价咨询（北京）有限公司</h2>
+            <div class="cws_divider with-plus short-3 center mb-20 mt-10"></div>
+            <p class="text-center mb-0">
+                为满足客户在全国范围拓展业务的需要，中博信在辽宁、湖南等地设立了分支机构。我们拥有最广泛的沟通渠道随时欢迎您的垂询、联络！
+            </p>
+          </div>
+        </div>
+        <div class="row mb-30">
+          <div class="col-md-4 col-sm-6 mb-md-30">
+            <div class="service-item icon-right border color-icon"><i class="flaticon-placeholder cws-icon"></i>
+              <p class="mb-0">北京市朝阳区八里庄西里</p>
+              <p class="mb-0">住邦2000一号楼东区20层 </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-md-30">
+            <div class="service-item icon-right border color-icon"><i class="flaticon-note cws-icon"></i>
+              <p class="mb-0">zbxc@zbxc.cn</p>
+              <p class="mb-0">hr@zbxc.cn</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="service-item icon-right border color-icon"><i class="flaticon-technology-2 cws-icon"></i>
+              <p class="mb-0">电话: (010) 8586-3223 </p>
+              <p class="mb-0">传真: (010) 8586-7012</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="title-section mb-0 mt-0 text-center">分支机构</h2>
+            <div class="cws_divider with-plus short-3 center mb-20 mt-10"></div>
+          </div>
+        </div>
+          <!--分公司联系方式-->
+        <div class="row">
+             {% for row in data %}
+                  <div class="col-sm-8 col-md-3">
+                    <div class="thumbnail">
+                      <img src="/static/{{ row.img }}" alt="辽宁分公司">
+                      <div class="caption">
+                        <h3>{{ row.name }}</h3>
+                        <p>分公司负责人：{{ row.leader }}</p>
+                        <p>地址：{{ row.addr }}</p>
+                          {% if row.zipcode == 0 %}
+                          {% else %}
+                            <p>邮编：{{ row.zipcode }}</p>
+                          {% endif %}
+                        <p>电话：{{ row.phone }}</p>
+                        <p>传真：{{ row.fix }}</p>
+                        <p>E-mail：{{ row.Email }}</p>
+                      </div>
+                    </div>
+                  </div>
+             {% endfor %}
+              </div>
+        {% include 'map.html' %}
+        <div style="width:1200px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+      </div>
+      <!-- ! content-->
+    </div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.500389,39.921117);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [{title:"中博信工程造价咨询（北京）有限公司",content:"工程造价咨询",point:"116.499589|39.921214",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+    initMap();//创建和初始化地图
+</script>
+
+{% endblock %}

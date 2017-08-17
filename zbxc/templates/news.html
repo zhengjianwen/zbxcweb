@@ -1,0 +1,93 @@
+﻿{% extends 'base.html' %}
+{% block css %}
+    <style>
+        #img {
+            margin-top: -100px
+        }
+
+        #news {
+            margin-top: 30px;
+        }
+        .border{
+            border-radius: 13px;
+            border: 0px solid silver;
+
+        }
+    .list-group-item span.new_data{
+        position: absolute;
+        right: 10px;
+
+    }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="content-body page">
+    <div class="container">
+        <img src="/static/news/news.jpg" id="img">
+        <div id="news" class="content-body row">
+            <div style="margin-left: 20px">当前位置：新闻中心</div>
+            <div class="col-md-8 border">
+                <div class="list-group">
+                      <a class="list-group-item active">
+                        公司新闻
+                      </a>
+                      <a href="#" class="list-group-item">
+                          ★中博信开展2017年度内部执业质量和内部管理情况检查
+                          <span class="new_data">2017-04-15</span>
+                      </a>
+                      <a href="#" class="list-group-item">★恭喜中博信获得“重合同守信用企业”<荣誉称号></荣誉称号>
+                      <span class="new_data">2017-04-15</span></a>
+                      <a href="#" class="list-group-item">★中博信开展2017年度内部执业质量和内部管理情况检查
+                      <span class="new_data">2017-04-15</span></a>
+                      <a href="#" class="list-group-item">★中博信开展2017年度内部执业质量和内部管理情况检查
+                      <span class="new_data">2017-04-15</span></a>
+                </div>
+                <div class="list-group">
+                      <a class="list-group-item active">
+                        行业动态
+                      </a>
+                      <a href="#" class="list-group-item">★中博信开展2017年度内部执业质量和内部管理情况检查
+                      <span class="new_data">2017-04-15</span></a>
+                      <a href="#" class="list-group-item">中博信开展2017年度内部执业质量和内部管理情况检查
+                      <span class="new_data">2017-04-15</span></a>
+                      <a href="#" class="list-group-item">中博信开展2017年度内部执业质量和内部管理情况检查
+                          <span class="new_data">2017-04-15</span></a>
+                      <a href="#" class="list-group-item">中博信开展2017年度内部执业质量和内部管理情况检查
+                          <span class="new_data">2017-04-15</span>
+                      </a>
+                </div>
+                <div class="list-group">
+                      <a class="list-group-item active">
+                        中标公告
+                      </a>
+                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                      <a href="#" class="list-group-item">Morbi leo risus</a>
+                      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                      <a href="#" class="list-group-item">Vestibulum at eros</a>
+                </div>
+
+            </div>
+            <div class="col-md-4 border" style="">
+                <div class="list-group">
+                      <a href="#" class="list-group-item disabled">
+                       公司新闻
+                      </a>
+                      <a href="#" class="list-group-item">行业新闻</a>
+                      <a href="#" class="list-group-item">动态页面</a>
+                      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                      <a href="#" class="list-group-item">Vestibulum at eros</a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+

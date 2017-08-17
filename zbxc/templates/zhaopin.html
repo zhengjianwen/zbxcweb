@@ -1,0 +1,66 @@
+﻿{% extends 'base.html' %}
+
+
+{% block css %}
+    <style>
+        #img {
+            margin-top: -100px
+        }
+
+        #case {
+            margin-top: 30px;
+        }
+
+        .item:hover {
+            border: 2px solid chartreuse
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="content-body page">
+    <div class="container">
+        <img src="/static/case/case.jpg" id="img">
+
+        <div id="case">
+            <div class="row">
+                {% for row in data %}
+                <div class="col-sm-3 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>{{ row.name }}</h3>
+                            <p>公司：{{ row.company }}</p>
+                            <p>学历：{{ row.get_xueli_display }}</p>
+                            <p>年龄：{{ row.age_s }}</p>
+                            <p>人数：{{ row.nub }}</p>
+                            <p>性质：{{ row.get_nature_display }}</p>
+                            <p>
+                                <a href="/zhaopin/jobs/{{ row.id }}.html">查看详情</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script>
+        $('.xmqk').click(function () {
+            var nid = $(this).attr('nid');
+            $.ajax(
+
+            );
+            $('#myModal').modal('show')
+
+        })
+
+    </script>
+
+
+{% endblock %}
